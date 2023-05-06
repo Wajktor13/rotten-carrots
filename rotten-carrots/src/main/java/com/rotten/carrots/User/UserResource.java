@@ -10,17 +10,15 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UserResource {
 
-    private UserRepository userRepository;
     private UserService userService;
 
     public UserResource(UserRepository userRepository) {
-        this.userRepository = userRepository;
         this.userService = new UserService(userRepository);
     }
 
     @GetMapping("/all")
     public List<User> getAll() {
-        return userRepository.findAll();
+        return userService.getAllUsers();
     }
 
     @GetMapping("/{userID}")
