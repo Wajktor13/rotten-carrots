@@ -1,7 +1,6 @@
 package com.rotten.carrots.User;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -10,7 +9,6 @@ public class User {
 
     @Id
     private String userID;
-    @Indexed(unique=true)
 
     private String name;
     private String surname;
