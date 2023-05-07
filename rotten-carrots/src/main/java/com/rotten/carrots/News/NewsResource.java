@@ -15,7 +15,10 @@ import java.util.List;
 @RequestMapping("/news")
 public class NewsResource {
 
-    final private NewsService newsService;
+    private NewsService newsService;
+
+    public NewsResource(){
+    }
 
     public NewsResource(NewsRepository newsRepository) {
         this.newsService = new NewsService(newsRepository);

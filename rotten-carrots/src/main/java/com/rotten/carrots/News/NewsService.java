@@ -1,12 +1,19 @@
 package com.rotten.carrots.News;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class NewsService {
 
     NewsRepository newsRepository;
+
+    public NewsService() {
+    }
 
     public NewsService(NewsRepository newsRepository) {
         this.newsRepository = newsRepository;

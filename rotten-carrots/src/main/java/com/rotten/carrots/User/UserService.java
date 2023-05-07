@@ -3,12 +3,16 @@ package com.rotten.carrots.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 public class UserService {
 
     UserRepository userRepository;
+
+    public UserService(){
+    }
 
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
@@ -18,11 +22,12 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public User getUserByID(String id) {
+    public Optional<User> getUserByID(String userID) {
+        
+        return this.userRepository.findById(userID);
+    }
 
-        return userRepository.findAll().stream()
-                .filter(u -> id.equals(u.getUserID()))
-                .findFirst()
-                .orElse(null);
+    public void deleteUserByID(String userID){
+        this.userRepository.deleteById(userID);
     }
 }

@@ -10,12 +10,10 @@ public class User {
     @Id
     private String userID;
 
-    private String name;
-    private String surname;
+    private String nickname;
 
-    public User(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public User(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getUserID() {
@@ -26,20 +24,12 @@ public class User {
         this.userID = userID;
     }
 
-    public String getName() {
-        return name;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getSurname() {
-        return surname;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }
 
