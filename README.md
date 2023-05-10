@@ -1,9 +1,19 @@
-Projekt Bazy Danych 2023
+# Projekt Bazy Danych 2023 - Rotten Carrots
 
-1.Skład grupy<br/>
-Adam Górka (adamgorka@student.agh.edu.pl)<br/>
-Kacper Augustyn (kacperau@student.agh.edu.pl)<br/>
-Wiktor Wilkusz (wiktorwilk@student.agh.edu.pl)
+## Skład zespołu
 
-2.Temat projektu<br/>
-Tematem projektu jest serwis z newsami, opiniami i kalendarzem premier gier komputerowych. Dodatkowo użytkownicy będą mieli możliwość zakupienia oraz wystawienia na sprzedaż gier na rynku. Inspirować będziemy się serwisem Rotten Tomatoes, stąd nazwa projektu - Rotten Carrots. Technologie, które chcemy wykorzystać to MongoDB oraz Java Spring.
+* Adam Górka (adamgorka@student.agh.edu.pl)<br/>
+* Kacper Augustyn (kacperau@student.agh.edu.pl)<br/>
+* Wiktor Wilkusz (wiktorwilk@student.agh.edu.pl)
+
+## Temat projektu
+
+  Tematem projektu jest system bazodanowy dla serwisu z newsami, opiniami i kalendarzem premier gier komputerowych. Dodatkowo użytkownicy będą mieli możliwość zakupienia oraz wystawienia na sprzedaż gier na rynku. Inspirować będziemy się serwisem Rotten Tomatoes, stąd nazwa projektu - Rotten     Carrots.
+  
+## Technologie
+
+* Backend: `Java Spring Boot`
+* Baza Danych: `MongoDB`
+
+## Dokumentacja
+  [link](./doc.md)
