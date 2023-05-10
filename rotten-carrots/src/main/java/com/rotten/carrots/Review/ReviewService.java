@@ -27,6 +27,10 @@ public class ReviewService {
         return this.reviewRepository.findById(reviewID);
     }
 
+    public List<Review> getGameReviews(String gameID){
+        return this.reviewRepository.findByGameID(gameID);
+    }
+
     public void deleteReviewByID(String reviewID){
         this.reviewRepository.deleteById(reviewID);
     }

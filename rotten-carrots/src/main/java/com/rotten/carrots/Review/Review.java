@@ -17,7 +17,10 @@ public class Review {
 
 
     private String gameID;
+
+    @DBRef
     private User author;
+
     private String content;
     private Integer carrotRate;
     private LocalDateTime dateTime;
