@@ -31,13 +31,13 @@ public class Game {
 
     private LocalDateTime releaseDate;
 
-    private float msrp;
+    private double msrp;
 
-    private Integer carrotRate = -1;
+    private double carrotRate = -1;
 
 
     public Game(String title, String genre, String description, LocalDateTime releaseDate, String developer,
-                float msrp) {
+                double msrp) {
         this.title = title;
         this.genre = genre;
         this.description = description;

@@ -1,6 +1,5 @@
 package com.rotten.carrots.Auctions;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +8,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/auctions")
-@RequiredArgsConstructor
 public class AuctionResource {
 
     private final AuctionService auctionService;
+
+    public AuctionResource(AuctionRepository auctionRepository) {
+        this.auctionService = new AuctionService(auctionRepository);
+    }
 
     @GetMapping("/all")
     public List<Auction> getAll() {

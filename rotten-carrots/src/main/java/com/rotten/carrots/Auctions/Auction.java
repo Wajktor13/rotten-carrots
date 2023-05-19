@@ -4,6 +4,7 @@ import com.rotten.carrots.Game.Game;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -16,22 +17,23 @@ public class Auction {
     @Id
     private String auctionID;
 
+    @DBRef
     private Game game;
 
     private String description;
 
-    private Float price;
+    private double price;
 
     private String ownerID;
 
     private LocalDateTime publicationDate;
 
 
-    public Auction(Game game, String description, Float price, String ownerID, LocalDateTime date){
+    public Auction(Game game, String description, double price, String ownerID, LocalDateTime publicationDate){
         this.game = game;
         this.description = description;
         this.price = price;
         this.ownerID = ownerID;
-        this.publicationDate = date;
+        this.publicationDate = publicationDate;
     }
 }
