@@ -1,11 +1,15 @@
 package com.rotten.carrots.News;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Document(collection = "news")
+@Getter
+@Setter
 public class News {
 
     @Id
@@ -14,33 +18,15 @@ public class News {
     private String author;
 
     private String title;
-    private String content;
-    private Date publicationDate;
 
-    public News(String author, String title, String content, Date publicationDate) {
+    private String content;
+
+    private LocalDateTime publicationDate;
+
+    public News(String author, String title, String content, LocalDateTime publicationDate) {
         this.author = author;
         this.title = title;
         this.content = content;
         this.publicationDate = publicationDate;
-    }
-
-    public String getNewsID() {
-        return newsID;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public Date getPublicationDate() {
-        return publicationDate;
     }
 }

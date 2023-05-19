@@ -2,7 +2,7 @@ package com.rotten.carrots.dbConfig;
 
 import com.rotten.carrots.Game.Game;
 import com.rotten.carrots.Game.GameRepository;
-import com.rotten.carrots.Marketplace.MarketplaceRepository;
+import com.rotten.carrots.Auctions.AuctionRepository;
 import com.rotten.carrots.Review.Review;
 import com.rotten.carrots.Review.ReviewRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +19,7 @@ public class MongoDBConfig {
     
     @Bean
     CommandLineRunner commandLineRunner(GameRepository gameRepository, ReviewRepository reviewRepository,
-                                        UserRepository userRepository, MarketplaceRepository marketplaceRepository) {
+                                        UserRepository userRepository, AuctionRepository auctionRepository) {
         return strings -> {
 //            User newUser1 = new User("Dolores15");
 //            User newUser2 = new User("Mike1999");
