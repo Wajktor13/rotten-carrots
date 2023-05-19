@@ -57,9 +57,6 @@ public class MongoDBConfig {
 //
 //            newUser2.addAuction(newAuction);
 //
-//            newGame.addReview(newReview1);
-//            newGame.addReview(newReview2);
-//
 //            News newNews = new News("JohnTheAdmin", "Upcoming games releases for June", "New month, new games...",
 //                    LocalDateTime.now());
 //

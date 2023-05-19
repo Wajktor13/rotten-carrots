@@ -45,9 +45,5 @@ public class Game {
         this.releaseDate =releaseDate;
         this.msrp = msrp;
     }
-
-    public void addReview(Review review){
-        this.reviews.add(review);
-    }
 }
 
