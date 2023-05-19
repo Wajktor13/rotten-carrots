@@ -17,9 +17,6 @@ public class NewsResource {
 
     private NewsService newsService;
 
-    public NewsResource(){
-    }
-
     public NewsResource(NewsRepository newsRepository) {
         this.newsService = new NewsService(newsRepository);
     }
