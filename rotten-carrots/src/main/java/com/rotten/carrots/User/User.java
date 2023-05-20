@@ -44,9 +44,5 @@ public class User {
     public void addFavouriteGame(Game game){
         this.favouriteGames.add(game);
     }
-
-    public void addReview(Review review){
-        this.reviews.add(review);
-    }
 }
 
