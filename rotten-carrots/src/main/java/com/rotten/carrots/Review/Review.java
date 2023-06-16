@@ -24,15 +24,15 @@ public class Review {
 
     private Integer carrotRate;
 
-    private LocalDateTime dateTime;
+    private LocalDateTime publicationDate;
 
 
-    public Review(String gameID, String author, String content, Integer carrotRate, LocalDateTime dateTime){
+    public Review(String gameID, String author, String content, Integer carrotRate, LocalDateTime publicationDate){
         this.gameID = gameID;
         this.author = author;
         this.content = content;
         this.carrotRate = carrotRate;
-        this.dateTime = dateTime;
+        this.publicationDate = publicationDate;
     }
 }
 
