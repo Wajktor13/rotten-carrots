@@ -25,9 +25,7 @@ public class User {
 
     private List<Review> reviews = new ArrayList<>();
 
-    private List<Auction> activeAuctions = new ArrayList<>();
-
-    private List<Auction> finishedAuctions = new ArrayList<>();
+    private List<Auction> auctions = new ArrayList<>();
 
     @DBRef
     private List<Game> favouriteGames = new ArrayList<>();
@@ -38,7 +36,7 @@ public class User {
     }
 
     public void addAuction(Auction auction){
-        this.activeAuctions.add(auction);
+        this.auctions.add(auction);
     }
 
     public void addFavouriteGame(Game game){
