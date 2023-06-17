@@ -1,7 +1,6 @@
 package com.rotten.carrots.Auctions;
 
 import com.rotten.carrots.Game.Game;
-import com.rotten.carrots.User.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -21,8 +20,7 @@ public class Auction {
     @DBRef
     private Game game;
 
-    @DBRef
-    private User owner;
+    private String ownerID;
 
     private String description;
 
@@ -33,11 +31,11 @@ public class Auction {
     private boolean isActive;
 
 
-    public Auction(Game game, String description, double price, User owner, LocalDateTime publicationDate){
+    public Auction(Game game, String description, double price, String ownerID, LocalDateTime publicationDate){
         this.game = game;
         this.description = description;
         this.price = price;
-        this.owner = owner;
+        this.ownerID = ownerID;
         this.publicationDate = publicationDate;
     }
 }
