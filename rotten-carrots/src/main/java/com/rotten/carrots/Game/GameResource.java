@@ -1,6 +1,5 @@
 package com.rotten.carrots.Game;
 
-import com.rotten.carrots.Review.Review;
 import com.rotten.carrots.Review.ReviewRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +28,12 @@ public class GameResource {
     public Optional<Game> getGameByID(@PathVariable("gameID") String gameID) {
         return this.gameService.getGameByID(gameID);
     }
+
+    @GetMapping("/genre/{genre}")
+    public List<Game> getGameByGenre(@PathVariable("genre") String genre) {
+        return this.gameService.getGameByGenre(genre);
+    }
+
 
     @GetMapping("/{gameID}/rate")
     public Integer getGameRate(@PathVariable("gameID") String gameID){
