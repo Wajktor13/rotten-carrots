@@ -4,12 +4,14 @@ import com.rotten.carrots.Game.Game;
 import com.rotten.carrots.User.User;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
+@Lazy
 @Document(collection = "auctions")
 @Getter
 @Setter
