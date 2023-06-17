@@ -30,6 +30,8 @@ public class Auction {
 
     private LocalDateTime publicationDate;
 
+    private boolean isActive;
+
 
     public Auction(Game game, String description, double price, User owner, LocalDateTime publicationDate){
         this.game = game;
