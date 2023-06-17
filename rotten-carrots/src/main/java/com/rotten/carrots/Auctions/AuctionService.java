@@ -1,5 +1,6 @@
 package com.rotten.carrots.Auctions;
 
+import com.rotten.carrots.Game.Game;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,22 @@ public class AuctionService {
         return auctionRepository.findAll();
     }
 
+    public List<Auction> getByPriceBetween(double minPrice, double maxPrice){
+        return auctionRepository.findByPrices(minPrice, maxPrice);
+    }
+
+    public List<Auction> getAuctionsByGame(Game game){
+        return auctionRepository.findByGame(game);
+    }
+
+    public List<Auction> getAuctionsByGenre(String genre){
+        return  auctionRepository.findByGameGenre(genre);
+    }
+
+    public List<Auction> getActive(){
+        return auctionRepository.findActive();
+    }
+
     public Optional<Auction> getAuctionByID(String id) {
         return auctionRepository.findById(id);
     }
@@ -34,5 +51,7 @@ public class AuctionService {
         auctionRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
+
+
 
 }

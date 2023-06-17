@@ -2,7 +2,6 @@ package com.rotten.carrots.Game;
 
 import com.rotten.carrots.Review.Review;
 import com.rotten.carrots.Review.ReviewRepository;
-import com.rotten.carrots.Review.ReviewService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,11 +14,8 @@ public class GameService {
     GameRepository gameRepository;
     ReviewRepository reviewRepository;
 
-    public GameService() {
-    }
-
-    public GameService(GameRepository newsRepository, ReviewRepository reviewRepository) {
-        this.gameRepository = newsRepository;
+    public GameService(GameRepository gameRepository, ReviewRepository reviewRepository) {
+        this.gameRepository = gameRepository;
         this.reviewRepository = reviewRepository;
     }
 
@@ -43,6 +39,10 @@ public class GameService {
             rate += review.getCarrotRate();
 
         return rate/reviews.size();
+    }
+
+    public List<Game> getGameByGenre(String genre){
+        return this.gameRepository.findByGenre(genre);
     }
 
     public void deleteGameByID(String gameID){
