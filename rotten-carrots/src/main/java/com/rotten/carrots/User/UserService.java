@@ -27,6 +27,22 @@ public class UserService {
         return this.userRepository.findById(userID);
     }
 
+    public Optional<User> getUserActiveAuctions(String userID){
+        return  this.userRepository.findUserActiveAuctions(userID);
+    }
+
+    public Optional<User> getUserFinishedAuctions(String userID){
+        return  this.userRepository.findUserFinishedAuctions(userID);
+    }
+
+    public Optional<User> getUserByNickname(String nickname){
+        return this.userRepository.findUserByNickname(nickname);
+    }
+
+    public User saveUser(User newUser){
+        return this.userRepository.save(newUser);
+    }
+
     public void deleteUserByID(String userID){
         this.userRepository.deleteById(userID);
     }

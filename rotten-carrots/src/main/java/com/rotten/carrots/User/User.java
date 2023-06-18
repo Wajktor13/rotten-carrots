@@ -4,6 +4,7 @@ import com.rotten.carrots.Auctions.Auction;
 import com.rotten.carrots.Game.Game;
 import com.rotten.carrots.Review.Review;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -15,6 +16,7 @@ import java.util.List;
 @Document(collection = "users")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 
     @Id
