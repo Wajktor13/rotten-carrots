@@ -16,4 +16,4 @@
 * Baza Danych: `MongoDB`
 
 ## Dokumentacja
-  [link](./doc.md)
+  [link](https://docs.google.com/document/d/1zYYpBVFWNZilHDJZIb5o1DRkpFfgqbM79dh2uPLZLNo/edit)
