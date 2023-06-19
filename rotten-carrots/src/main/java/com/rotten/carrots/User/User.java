@@ -27,7 +27,6 @@ public class User {
 
     private List<Review> reviews = new ArrayList<>();
 
-    @DBRef
     private List<Auction> auctions = new ArrayList<>();
 
     private List<Game> favouriteGames = new ArrayList<>();
