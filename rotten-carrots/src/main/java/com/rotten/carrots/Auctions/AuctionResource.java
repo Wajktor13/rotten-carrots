@@ -55,7 +55,8 @@ public class AuctionResource {
     public String buyAuction(
             @RequestParam("auctionid") String auctionID,
             @RequestParam("userid") String userID) {
-        // http://localhost:8080/auctions/buy?auctionid={id}&userid={id}
+        // http://localhost:8080/auctions/buy?auctionid=648da202b75f480affc80351&userid=648d724e020f97c10309f327
+
         boolean success = auctionService.purchaseById(auctionID, userID);
         if (success) return "Purchased";
         return "Failed to Purchase";

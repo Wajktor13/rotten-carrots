@@ -6,6 +6,7 @@ import com.rotten.carrots.User.UserRepository;
 import com.rotten.carrots.User.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class AuctionService {
         return ResponseEntity.ok().build();
     }
 
-    @Transactional
+   // @Transactional
     public boolean purchaseById(String auctionID, String userID){
         Optional<Auction> actn = getAuctionByID(auctionID);
         Optional<User> usr = userService.getUserByID(userID);
@@ -70,14 +71,25 @@ public class AuctionService {
             if( !auction.isActive() )
                 return false;
 
-            auction.setActive(false);
-            user.addToBoughtGames(auction);
+            System.out.println("auction "+auction.getAuctionID());
+            System.out.println("user "+user.getUserID());
 
+            auction.setActive(false);
             auctionRepository.save(auction);
+
+            user.addToBoughtGames(auction);
             userService.updateUser(user);
 
+            // 648da202b75f480affc80351
+            // 648d724e020f97c10309f327
+
+
+
+
+            System.out.println("success");
             return true;
         } else {
+            System.out.println("not found");
             return false;
         }
     }

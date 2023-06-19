@@ -31,7 +31,7 @@ public class Auction {
 
     private boolean isActive;
 
-    @Version
+    //@Version
     private Long version;
 
 
