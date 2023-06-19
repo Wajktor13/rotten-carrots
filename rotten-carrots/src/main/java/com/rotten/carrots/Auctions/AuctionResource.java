@@ -51,7 +51,7 @@ public class AuctionResource {
         return auctionService.getByPriceBetween(minPrice, maxPrice);
     }
 
-    @GetMapping("/buy")
+    @PostMapping("/buy")
     public String buyAuction(
             @RequestParam("auctionid") String auctionID,
             @RequestParam("userid") String userID) {
