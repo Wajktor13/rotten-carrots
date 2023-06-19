@@ -71,7 +71,7 @@ public class AuctionService {
                 return false;
 
             auction.setActive(false);
-            user.addBought(auction);
+            user.addToBoughtGames(auction);
 
             auctionRepository.save(auction);
             userService.updateUser(user);

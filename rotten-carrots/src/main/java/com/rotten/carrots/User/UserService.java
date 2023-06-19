@@ -27,8 +27,9 @@ public class UserService {
         return this.userRepository.findById(userID);
     }
 
-    public void updateUser(User user){
+    public void updateUser(User user) {
         this.userRepository.save(user);
+    }
 
     public Optional<User> getUserActiveAuctions(String userID){
         return  this.userRepository.findUserActiveAuctions(userID);

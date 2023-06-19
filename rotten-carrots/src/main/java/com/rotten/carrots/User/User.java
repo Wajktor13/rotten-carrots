@@ -30,7 +30,7 @@ public class User {
     @DBRef
     private List<Auction> auctions = new ArrayList<>();
 
-    private List<String> favouriteGames = new ArrayList<>();
+    private List<Game> favouriteGames = new ArrayList<>();
 
     private List<Auction> boughtGames = new ArrayList<>();
 
@@ -42,9 +42,9 @@ public class User {
         this.auctions.add(auction);
     }
 
-    public void addBought(Auction auction) { this.bought.add(auction); }
+    public void addToBoughtGames(Auction auction) { this.boughtGames.add(auction); }
 
-    public void addFavouriteGame(String game){
+    public void addFavouriteGame(Game game){
         this.favouriteGames.add(game);
     }
 }
