@@ -34,4 +34,23 @@ public class ReviewService {
     public void deleteReviewByID(String reviewID){
         this.reviewRepository.deleteById(reviewID);
     }
+
+    public List<Review> getByCarrotRate() {
+        return reviewRepository.findByOrderByCarrotRateDesc();
+    }
+
+    public List<Review> getTopByCarrotRate() {
+        return reviewRepository.findTop15ByOrderByCarrotRateDesc();
+    }
+
+    public List<Review> getReviewsByAuthor(String author){
+        return reviewRepository.findByAuthor(author);
+    }
+    public List<Review> getReviewsByContent(String content) {
+        return reviewRepository.getReviewsByContent(content);
+    }
+
+    public List<Review> findByOrderPublicationDateDesc() {
+        return reviewRepository.findByOrderByPublicationDateDesc();
+    }
 }

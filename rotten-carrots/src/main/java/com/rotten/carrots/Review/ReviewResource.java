@@ -37,4 +37,28 @@ public class ReviewResource {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    @GetMapping("/reviewsByCarrotRate")
+    public List<Review>getByCarrotRate(){
+        return reviewService.getByCarrotRate();
+    }
+
+    @GetMapping("/top")
+    public List<Review>getTopByCarrotRate(){
+        return reviewService.getTopByCarrotRate();
+    }
+
+    @GetMapping("/reviewsByContent")
+    public List<Review> getByContent(@RequestParam("content") String content){
+        return reviewService.getReviewsByContent(content);
+    }
+    @GetMapping("/reviewsByAuthor")
+    public List<Review> getByAuthor(@RequestParam("author") String author){
+        return reviewService.getReviewsByAuthor(author);
+    }
+    @GetMapping("/newest")
+    public List<Review> getNewest(){
+        return reviewService.findByOrderPublicationDateDesc();
+    }
+
 }

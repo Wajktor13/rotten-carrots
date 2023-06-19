@@ -14,13 +14,9 @@ public class News {
 
     @Id
     private String newsID;
-
     private String author;
-
     private String title;
-
     private String content;
-
     private LocalDateTime publicationDate;
 
     public News(String author, String title, String content, LocalDateTime publicationDate) {
