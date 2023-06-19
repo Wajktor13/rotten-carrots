@@ -10,6 +10,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +27,12 @@ public class User {
 
     private List<Review> reviews = new ArrayList<>();
 
+    @DBRef
     private List<Auction> auctions = new ArrayList<>();
 
-    @DBRef
-    private List<Game> favouriteGames = new ArrayList<>();
+    private List<String> favouriteGames = new ArrayList<>();
 
+    private List<Auction> boughtGames = new ArrayList<>();
 
     public User(String nickname) {
         this.nickname = nickname;
@@ -40,7 +42,9 @@ public class User {
         this.auctions.add(auction);
     }
 
-    public void addFavouriteGame(Game game){
+    public void addBought(Auction auction) { this.bought.add(auction); }
+
+    public void addFavouriteGame(String game){
         this.favouriteGames.add(game);
     }
 }
