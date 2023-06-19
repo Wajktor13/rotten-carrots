@@ -27,6 +27,10 @@ public class UserService {
         return this.userRepository.findById(userID);
     }
 
+    public void updateUser(User user){
+        this.userRepository.save(user);
+    }
+
     public void deleteUserByID(String userID){
         this.userRepository.deleteById(userID);
     }

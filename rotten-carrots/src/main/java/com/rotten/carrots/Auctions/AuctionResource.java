@@ -4,6 +4,7 @@ import com.rotten.carrots.Game.Game;
 import com.rotten.carrots.Game.GameRepository;
 import com.rotten.carrots.Game.GameService;
 import com.rotten.carrots.Review.ReviewRepository;
+import com.rotten.carrots.User.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +19,8 @@ public class AuctionResource {
     private final AuctionService auctionService;
     private final GameService gameService;
 
-    public AuctionResource(AuctionRepository auctionRepository, GameRepository gameRepository, ReviewRepository reviewRepository) {
-        this.auctionService = new AuctionService(auctionRepository);
+    public AuctionResource(AuctionRepository auctionRepository, GameRepository gameRepository, ReviewRepository reviewRepository, UserRepository userRepository) {
+        this.auctionService = new AuctionService(auctionRepository, userRepository);
         this.gameService = new GameService(gameRepository, reviewRepository);
     }
 
@@ -48,6 +49,16 @@ public class AuctionResource {
             @RequestParam("maxPrice") double maxPrice) {
         // http://localhost:8080/auctions/price?minPrice=28.0&maxPrice=29.0
         return auctionService.getByPriceBetween(minPrice, maxPrice);
+    }
+
+    @GetMapping("/buy")
+    public String buyAuction(
+            @RequestParam("auctionid") String auctionID,
+            @RequestParam("userid") String userID) {
+        // http://localhost:8080/auctions/buy?auctionid={id}&userid={id}
+        boolean success = auctionService.purchaseById(auctionID, userID);
+        if (success) return "Purchased";
+        return "Failed to Purchase";
     }
 
     @GetMapping("/game/genre/{genre}")
