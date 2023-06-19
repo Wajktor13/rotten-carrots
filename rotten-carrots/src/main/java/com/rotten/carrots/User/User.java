@@ -32,7 +32,7 @@ public class User {
 
     private List<String> favouriteGames = new ArrayList<>();
 
-    private List<Auction> bought = new ArrayList<>();
+    private List<Auction> boughtGames = new ArrayList<>();
 
     public User(String nickname) {
         this.nickname = nickname;
