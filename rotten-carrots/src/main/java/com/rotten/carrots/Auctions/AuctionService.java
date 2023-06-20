@@ -59,7 +59,7 @@ public class AuctionService {
         return ResponseEntity.ok().build();
     }
 
-   // @Transactional
+    @Transactional
     public boolean purchaseById(String auctionID, String userID){
         Optional<Auction> actn = getAuctionByID(auctionID);
         Optional<User> usr = userService.getUserByID(userID);
@@ -71,17 +71,20 @@ public class AuctionService {
             if( !auction.isActive() )
                 return false;
 
-            System.out.println("auction "+auction.getAuctionID());
-            System.out.println("user "+user.getUserID());
-
             auction.setActive(false);
+
+            this.deleteAuctionByID(auctionID);
             auctionRepository.save(auction);
 
             user.addToBoughtGames(auction);
+            this.userService.deleteUserByID(userID);
             userService.updateUser(user);
 
-            // 648da202b75f480affc80351
-            // 648d724e020f97c10309f327
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 

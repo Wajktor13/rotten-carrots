@@ -93,3 +93,30 @@ exports = async function(changeEvent) {
         }
     );
 };
+
+
+// UpdateAuctionStatusInUser
+exports = async function(changeEvent) {
+    const updatedAuction = changeEvent.fullDocument;
+    const ownerIdObj = BSON.ObjectId(updatedAuction.ownerID);
+    
+    const usersCollection = context.services.get("rotten-carrots-database").db("rotten-carrots-database").collection("users");
+    const user = await usersCollection.findOne({_id: ownerIdObj});
+    const userAuctions = user.auctions;
+    
+    for(auction of userAuctions){
+      if(auction._id.toString()==updatedAuction._id.toString()){
+        auction.isActive = updatedAuction.isActive;
+        break;
+      }
+    }
+  
+    await usersCollection.updateOne(
+      {_id: ownerIdObj},
+      {
+        $set: {
+          auctions: userAuctions
+        }
+      }
+    );
+  };
