@@ -45,7 +45,8 @@ public class NewsResource {
     }
 
     @GetMapping("/byYearAndMonth")
-    public List<News> getNewsFromOneYearAndMonth(@RequestParam("year") String year, @RequestParam("month") String month) {
+    public List<News> getNewsFromOneYearAndMonth(@RequestParam("year") String year,
+                                                 @RequestParam("month") String month) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String from_ = year +"-"+ month + "-01";
         String to_ = switch (month) {
@@ -94,7 +95,9 @@ public class NewsResource {
     }
 
     @GetMapping("/{author}/{from_}/{to_}")
-    public List<News> getByAuthorAndBetweenDates(@PathVariable("author") String author, @PathVariable("from_") String from_, @PathVariable("to_") String to_){
+    public List<News> getByAuthorAndBetweenDates(@PathVariable("author") String author,
+                                                 @PathVariable("from_") String from_,
+                                                 @PathVariable("to_") String to_){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date from = format.parse(from_);
@@ -121,7 +124,8 @@ public class NewsResource {
     }
 
     @GetMapping("/newsByAuthorAndContent")
-    public List<News>getByAuthorAndContent(@RequestParam("content") String content, @RequestParam("author") String author){
+    public List<News>getByAuthorAndContent(@RequestParam("content") String content,
+                                           @RequestParam("author") String author){
         return newsService.getByAuthorAndContent(content, author);
     }
     @GetMapping("/newsByContent")

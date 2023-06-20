@@ -4,6 +4,7 @@ import com.rotten.carrots.Review.Review;
 import com.rotten.carrots.Review.ReviewRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,5 +48,26 @@ public class GameService {
 
     public void deleteGameByID(String gameID){
         this.gameRepository.deleteById(gameID);
+    }
+
+    public List<Game> getGamesSortedByTitle() {
+        return this.gameRepository.findGamesByOrderByTitle();
+    }
+
+    public List<Game> getGameByTitle(String title) {
+        return this.gameRepository.findGamesByTitle(title);
+    }
+
+
+    public List<Game> getNewsBetweenDates(Date from, Date to) {
+        return this.gameRepository.findBetweenDates(from,to);
+    }
+
+    public List<Game> getGameByDeveloper(String name) {
+        return this.gameRepository.findGamesByDeveloper(name);
+    }
+
+    public List<Game> getGamesWithDescriptionFragment(String content) {
+        return this.gameRepository.findGamesWithDescriptionFragment(content);
     }
 }

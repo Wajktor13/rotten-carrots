@@ -18,21 +18,13 @@ public class Game {
 
     @Id
     private String gameID;
-
     private List<Review> reviews = new ArrayList<>();
-
     private String title;
-
     private String genre;
-
     private String description;
-
     private String developer;
-
     private LocalDateTime releaseDate;
-
     private double msrp;
-
     private double carrotRate = -1;
 
 
@@ -42,7 +34,7 @@ public class Game {
         this.genre = genre;
         this.description = description;
         this.developer = developer;
-        this.releaseDate =releaseDate;
+        this.releaseDate = releaseDate;
         this.msrp = msrp;
     }
 }
