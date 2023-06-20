@@ -71,9 +71,12 @@ public class AuctionService {
                 return false;
 
             auction.setActive(false);
-            user.addToBoughtGames(auction);
 
+            this.deleteAuctionByID(auctionID);
             auctionRepository.save(auction);
+
+            user.addToBoughtGames(auction);
+            this.userService.deleteUserByID(userID);
             userService.updateUser(user);
 
             return true;

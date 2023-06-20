@@ -2,9 +2,9 @@ package com.rotten.carrots.Auctions;
 
 import com.rotten.carrots.Game.Game;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Document(collection = "auctions")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Auction {
 
     @Id
@@ -30,9 +31,6 @@ public class Auction {
     private LocalDateTime publicationDate;
 
     private boolean isActive;
-
-    @Version
-    private Long version;
 
 
     public Auction(Game game, String description, double price, String ownerID, LocalDateTime publicationDate){
