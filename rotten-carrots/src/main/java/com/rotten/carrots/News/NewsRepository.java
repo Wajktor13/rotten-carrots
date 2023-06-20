@@ -24,7 +24,8 @@ public interface NewsRepository extends MongoRepository<News, String> {
     List<News> findByAuthor(String author);
 
     @Aggregation(pipeline = {
-            "{$match: {$and: [{author: ?0}, {publicationDate: {$gte: ?1}}, {publicationDate: {$lt: ?2}}]}}",
+            "{$match: {$and: [{author: ?0}, {publicationDate: {$gte: ?1}}, " +
+                    "{publicationDate: {$lt: ?2}}]}}",
             "{$sort: {publicationDate: -1}}"
     })
     List<News> findNewsByAuthorAndDate(String author, Date startDate, Date endDate);
@@ -44,6 +45,7 @@ public interface NewsRepository extends MongoRepository<News, String> {
     @Query("{'content': {$regex: '?0', $options: 'i'}}")
     List<News> getByContentFragment(String fragment);
 
-    @Query("{'author': {$regex: '^?1', $options: 'i'}, 'content': {$regex: '?0', $options: 'i'}}")
+    @Query("{'author': {$regex: '^?1', $options: 'i'}, " +
+            "'content': {$regex: '?0', $options: 'i'}}")
     List<News> findByAuthorAndContent(String content, String author);
 }

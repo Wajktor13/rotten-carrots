@@ -32,7 +32,6 @@ public class Auction {
 
     private boolean isActive;
 
-
     public Auction(Game game, String description, double price, String ownerID, LocalDateTime publicationDate){
         this.game = game;
         this.description = description;

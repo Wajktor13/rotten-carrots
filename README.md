@@ -12,8 +12,8 @@
   
 ## Technologie
 
-* Backend: `Java Spring Boot`
+* Backend: `Java Spring`
 * Baza Danych: `MongoDB`
 
 ## Dokumentacja
-  [link](https://docs.google.com/document/d/1zYYpBVFWNZilHDJZIb5o1DRkpFfgqbM79dh2uPLZLNo/edit)
+  [link](https://github.com/Wajktor13/rotten-carrots/blob/main/doc.pdf)
