@@ -80,14 +80,6 @@ public class AuctionService {
             this.userService.deleteUserByID(userID);
             userService.updateUser(user);
 
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-
 
             System.out.println("success");
             return true;
