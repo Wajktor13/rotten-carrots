@@ -12,7 +12,7 @@
   
 ## Technologie
 
-* Backend: `Java Spring Boot`
+* Backend: `Java Spring`
 * Baza Danych: `MongoDB`
 
 ## Dokumentacja
