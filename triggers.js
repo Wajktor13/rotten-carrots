@@ -120,3 +120,19 @@ exports = async function(changeEvent) {
       }
     );
   };
+
+
+// AddLogOnNewsInsert
+exports = function(changeEvent) {
+    const { fullDocument } = changeEvent;
+  
+    const logCollection = context.services.get("rotten-carrots-database").db("rotten-carrots-database").collection("news-log");
+    const logDocument = {
+      timestamp: new Date(),
+      message: "New news inserted",
+      newsId: fullDocument._id,
+    };
+  
+    return logCollection.insertOne(logDocument);
+  };
+  
