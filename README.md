@@ -1,19 +1,11 @@
-# Projekt Bazy Danych 2023 - Rotten Carrots
+# Rotten Carrots
+Final project for Introduction to Databases course at AGH University. Inspired by Rotten Tomatoes. Made in collaboration with [@augustynkacper](https://github.com/augustynkacper) and [@adam147g](https://github.com/adam147g).
 
-## Skład zespołu
+## Technologies used
 
-* Adam Górka (adamgorka@student.agh.edu.pl)<br/>
-* Kacper Augustyn (kacperau@student.agh.edu.pl)<br/>
-* Wiktor Wilkusz (wiktorwilk@student.agh.edu.pl)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/static/v1?style=for-the-badge&message=Spring+Boot&color=6DB33F&logo=Spring+Boot&logoColor=FFFFFF&label=)
+![MongoDB](https://img.shields.io/static/v1?style=for-the-badge&message=MongoDB&color=47A248&logo=MongoDB&logoColor=FFFFFF&label=)
 
-## Temat projektu
-
-  Tematem projektu jest system bazodanowy dla serwisu z newsami, opiniami i kalendarzem premier gier komputerowych. Dodatkowo użytkownicy będą mieli możliwość zakupienia oraz wystawienia na sprzedaż gier na rynku. Inspirować będziemy się serwisem Rotten Tomatoes, stąd nazwa projektu - Rotten     Carrots.
-  
-## Technologie
-
-* Backend: `Java Spring`
-* Baza Danych: `MongoDB`
-
-## Dokumentacja
+## Documentation (in Polish)
   [link](https://github.com/Wajktor13/rotten-carrots/blob/main/doc.pdf)
