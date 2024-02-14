@@ -1,5 +1,11 @@
 # Rotten Carrots
-Final project for Introduction to Databases course at AGH University. Inspired by Rotten Tomatoes. Made in collaboration with [@augustynkacper](https://github.com/augustynkacper) and [@adam147g](https://github.com/adam147g).
+Final project for Introduction to Databases course at AGH University. Its goal was to create backend for website with news, reviews and marketplace with computer games.
+<br>
+<br>
+Inspired by Rotten Tomatoes.
+<br>
+<br>
+Made in collaboration with [@augustynkacper](https://github.com/augustynkacper) and [@adam147g](https://github.com/adam147g).
 
 ## Technologies used
 
